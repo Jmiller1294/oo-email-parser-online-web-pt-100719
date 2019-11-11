@@ -4,24 +4,20 @@
 # or whitespace (' ').
 
 class EmailAddressParser
+
 attr_accessor :email_addresses
 
-@@all = []
+  
 
-def initialize(email_addresses)
-@email_addresses = email_addresses
-end
-
-def parse
-  new_array = []
-  email_addresses.split.collect do |email|
-    new_array << email.split(",")
+  def initialize(email_addresses)
+  @email_addresses = email_addresses
   end
-  new_array.flatten.uniq 
-end
 
-
-
-
-
+  def parse
+    new_array = []
+    email_addresses.split.collect do |email|
+      new_array << email.split(",")
+    end
+    new_array.flatten.uniq 
+  end
 end
